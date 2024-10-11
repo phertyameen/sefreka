@@ -5,7 +5,7 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Layout from "./layouts/Layout";
 import Communities from "./pages/Communities";
-import ResetPassword from "./pages/resetPassword";
+import ResetPassword from "./pages/ResetPassword";
 import PasswordSuccess from "./pages/PasswordSuccess";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Home from "./pages/dashboardPages/Home";
