@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import TimelineItem from "./TimeLineItem";
+// import TimelineItem from "./TimeLineItem";
+import TimeLineItem from "./TimeLineItem";
 
 const HistorySect = () => {
   const timelineData = [
@@ -70,7 +71,7 @@ const HistorySect = () => {
       </div>
       <ul className="timeline timeline-vertical gap-[13.13px]">
         {timelineData.map((item, index) => (
-          <TimelineItem
+          <TimeLineItem
             key={index}
             date={item.date}
             title={item.title}
