@@ -77,7 +77,7 @@ const HomeUpdates = () => {
         </div>
         <ul className="timeline timeline-vertical gap-[13.13px]">
           {timelineData.map((item, index) => (
-            <TimelineItems
+            <TimeLineItems
               key={index}
               date={item.date}
               title={item.title}
