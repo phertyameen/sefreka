@@ -69,7 +69,7 @@ const HistorySect = () => {
           <span>Go to Find Counselor</span>
         </div>
       </div>
-      <ul className="timeline timeline-vertical gap-[13.13px]">
+      <ul className="timeline timeline-vertical">
         {timelineData.map((item, index) => (
           <TimeLineItems
             key={index}

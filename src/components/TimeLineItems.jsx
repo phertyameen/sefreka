@@ -7,14 +7,14 @@ const TimeLineItems = ({ date, title, description, time, color, borderCol }) => 
       {/* Date and circle marker */}
       <div className="relative flex flex-col items-center">
         <span
-          className={`absolute right-[-25%] block w-[19.7px] h-[19.7px] border-[3.28px] ${borderCol} rounded-full ${color}`}
+          className={`absolute right-[-27%] block w-[19.7px] h-[19.7px] border-[3.28px] z-1 ${borderCol} rounded-full ${color}`}
         />
         <span className="md:text-nowrap md:mr-[29.5px] md:right-[-20%]">{date}</span>
       </div>
 
       {/* Timeline content box */}
-      <div className="w-full md:border-l">
-        <div className="w-full flex justify-between bg-white ml-[12px] py-[12px] px-[5px] lg:ml-[29.5px] lg:py-[15px] lg:px-[30px] shadow rounded-lg">
+      <div className="w-full md:border-l border-[#4E4E4E]">
+        <div className="w-full flex justify-between bg-white ml-[12px] py-[12px] mb-[13.13px] px-[5px] lg:ml-[29.5px] lg:py-[15px] lg:px-[30px] shadow rounded-lg">
           <div className="text-[22.97px] text-[#4E4E4E]">
             <p className="font-medium">
               {title}{" "}

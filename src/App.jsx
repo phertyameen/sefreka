@@ -85,7 +85,7 @@ function App() {
           element: <Profile />,
           children: [
             {
-              index: true,
+              path: "profileinfo",
               element: <ProfileInfo />,
             },
             {

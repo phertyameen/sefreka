@@ -6,17 +6,17 @@ const ProfileNavLinks = ({ links, activeNavStyles, notNavStyles, text }) => {
 
   return (
     <ul
-      className={`h-max flex flex-col gap-[15px] md:gap-4 text-${text} divShadow text-nowrap`}
+      className={`h-max flex flex-col py-[46px] px-[29px] text-${text} divShadow text-nowrap`}
     >
       {links.map(({ title, url, src }, index) => {
         const active = pathname.endsWith(url);
         console.log(active);
         console.log(url, pathname);
         return (
-          <li className="px-4 py-3" key={index}>
+          <li key={index}>
             <NavLink
               to={url}
-              className={`rounded flex gap-[10px] p-3 w-full ${
+              className={`rounded flex gap-[10px] py-[12.5px] px-[16px] w-full ${
                 active ? activeNavStyles : notNavStyles
               }`}
             >

@@ -58,7 +58,7 @@ const ProgressTracking = () => {
             onClick={handleIconClick}
           />
         </div>
-        <p className="text-[#5825B0]">Keep track of your growth this week</p>
+        <p className="text-[#5825B0] mt-[30px]">Keep track of your growth this week</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-[4.9px] xl:px-[41.81px] py-[31.36px] px-5 lg:pt-[44.8px] lg:px-[37.3px] mx-[15px] lg:ml-[15px] lg:mr-[51px] ">
         {cardItems.map((cardItem, index) => {

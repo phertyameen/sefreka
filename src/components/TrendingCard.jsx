@@ -37,7 +37,7 @@ const TrendingCard = ({
               </p>
               <div className="flex justify-between items-center">
                 <div className="flex gap-[17.4px] items-center mt-2">
-                  <span className="bg-[#D9D9D9] text-[#2C2B2B] text-[14.56px] font-light p-[11.65px] rounded-full">
+                  <span className="bg-[#D9D9D9] text-[#2C2B2B] text-[14.56px] font-light px-[11.65px] py-[8px] rounded-full">
                     {field}
                   </span>
                   <span>{readTime}</span>

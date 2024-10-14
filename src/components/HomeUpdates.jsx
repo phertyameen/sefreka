@@ -75,7 +75,7 @@ const HomeUpdates = () => {
         <div className="absolute left-[-20%] top-7 w-full lg:w-max h-max bottom-0 z-0">
           <img src={eclipsbg} alt="" />
         </div>
-        <ul className="timeline timeline-vertical gap-[13.13px]">
+        <ul className="timeline timeline-vertical mt-[17px]">
           {timelineData.map((item, index) => (
             <TimeLineItems
               key={index}
