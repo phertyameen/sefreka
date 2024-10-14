@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import TimelineItem from "./TimeLineItem";
+import TimeLineItems from "./TimeLineItems";
 import eclipsbg from "../assets/images/eclips.svg";
 
 const HomeUpdates = () => {
@@ -77,7 +77,7 @@ const HomeUpdates = () => {
         </div>
         <ul className="timeline timeline-vertical gap-[13.13px]">
           {timelineData.map((item, index) => (
-            <TimelineItem
+            <TimelineItems
               key={index}
               date={item.date}
               title={item.title}
