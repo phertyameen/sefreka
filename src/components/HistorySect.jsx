@@ -1,6 +1,8 @@
 import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import TimeLineItem from "./TimeLineItem";
+import TimeLineItems from "./TimeLineItems";
+
 
 const HistorySect = () => {
   const timelineData = [

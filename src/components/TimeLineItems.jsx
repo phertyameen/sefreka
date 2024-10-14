@@ -1,7 +1,7 @@
 import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
-const TimeLineItem = ({ date, title, description, time, color, borderCol }) => {
+const TimeLineItems = ({ date, title, description, time, color, borderCol }) => {
   return (
     <li className="text-[19.69px] text-[#2C2B2B] flex items-start gap-4">
       {/* Date and circle marker */}
@@ -34,4 +34,4 @@ const TimeLineItem = ({ date, title, description, time, color, borderCol }) => {
   );
 };
 
-export default TimeLineItem;
+export default TimeLineItems;
