@@ -4,6 +4,10 @@
 
 /* add the code bellow */
 @layer utilities {
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  body{
+    font-family: "Roboto", sans-serif;;
+  }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -37,6 +41,13 @@
     font-size: 20px;
     font-weight: 400;
   }
+  @media screen and (min-width: 769px) and (max-width: 1156px) {
+    .custom-img-container {
+      height: max-content;
+      align-self: center;
+      padding: 0 !important;
+    }
+  }  
 }
 /* h1, h2, h3, h4{
   font-family: Georgia, 'Times New Roman', Times, serif;

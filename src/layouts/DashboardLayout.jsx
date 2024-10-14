@@ -30,7 +30,7 @@ const DashboardLayout = () => {
     position: relative;
     display: grid;
     grid-template-columns: max-content 1fr;
-    min-height: 100vh;
+    max-height: 897px;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }

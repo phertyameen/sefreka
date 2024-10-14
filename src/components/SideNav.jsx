@@ -26,12 +26,13 @@ const SideNav = ({ isopen, handleToggle }) => {
     width: max-content;
     padding: 42px 42px;
     border-bottom: 1px solid #ddd;
-    min-height: 100vh;
+    min-height: 91.99vh;
     display: block;
     @media (max-width: 768px) {
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 2;
       padding-top: 60px;
       transform: ${({ isopen }) =>
         isopen ? "translateX( 0)" : "translateX(-100%)"};
