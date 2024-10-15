@@ -5,6 +5,7 @@ import logo from "../assets/images/logo.svg";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { useNavigate } from "react-router-dom";
+import { MdHome } from "react-icons/md";
 
 const NewPasswordField = () => {
   const navigate = useNavigate()
@@ -30,7 +31,7 @@ const NewPasswordField = () => {
           <img src={logo} alt="selfreka logo" className="w-[100px] md:w-auto" />
         </div>
         <div className="">
-          <img className="w-[24px]" src={homeIcon} alt="home icon" />
+        <MdHome className="h-[30px] w-[30px] text-[#421196]" />
         </div>
       </div>
       <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">

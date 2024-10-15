@@ -4,6 +4,7 @@ import backArrow from "../assets/images/backArrow.svg";
 import homeIcon from "../assets/images/homeIcon.svg";
 import Button from "./Button";
 import { Link } from "react-router-dom";
+import { MdHome } from "react-icons/md";
 
 export default function EmailVerificationModal({ handleOtpSubmit }) {
   const [otpValues, setOtpValues] = useState(Array(4).fill(""));
@@ -48,7 +49,7 @@ export default function EmailVerificationModal({ handleOtpSubmit }) {
           <img src={logo} alt="selfreka logo" className="w-[100px] md:w-auto" />
         </div>
         <div>
-          <img className="w-[24px]" src={homeIcon} alt="home icon" />
+        <MdHome className="h-[30px] w-[30px] text-[#421196]" />
         </div>
       </div>
 

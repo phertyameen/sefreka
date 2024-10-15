@@ -3,6 +3,7 @@ import homeIcon from "../assets/images/homeIcon.svg";
 import logo from "../assets/images/logo.svg";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import { MdHome } from "react-icons/md";
 
 const PasswordSuccess = () => {
     const navigate = useNavigate()
@@ -25,7 +26,7 @@ const PasswordSuccess = () => {
             />
           </div>
           <div className="">
-            <img className="w-[24px]" src={homeIcon} alt="home icon" />
+          <MdHome className="h-[30px] w-[30px] text-[#421196]" />
           </div>
         </div>
 

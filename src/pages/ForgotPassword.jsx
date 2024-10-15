@@ -5,6 +5,7 @@ import logo from "../assets/images/logo.svg";
 import backArrow from "../assets/images/backArrow.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import { MdHome } from "react-icons/md";
 
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({
@@ -39,7 +40,7 @@ const ForgotPassword = () => {
             />
           </div>
           <div className="">
-            <img className="w-[24px]" src={homeIcon} alt="home icon" />
+          <MdHome className="h-[30px] w-[30px] text-[#FBE077]" />
           </div>
         </div>
 

@@ -91,7 +91,7 @@ const Login = () => {
               />
               {errors.password && <p className="text-red-500">{errors.password}</p>}
             </div>
-            <div className="w-full my-4 flex justify-between">
+            <div className="w-full my-4 md:flex justify-between">
               <div>
                 <input
                   className="py-4 px-5 border rounded-[5px] border-[#421196] outline-none"

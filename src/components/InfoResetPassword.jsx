@@ -5,6 +5,7 @@ import backArrow from "../assets/images/backArrow.svg";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { MdHome } from "react-icons/md";
 
 const InfoResetPassword = ({ onResetPasswordClick }) => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const InfoResetPassword = ({ onResetPasswordClick }) => {
             />
           </div>
           <div className="">
-            <img className="w-[24px]" src={homeIcon} alt="home icon" />
+          <MdHome className="h-[30px] w-[30px] text-[#421196]" />
           </div>
         </div>
 
