@@ -35,11 +35,11 @@ const ProfileInfo = ({ profileNav }) => {
         Personal Information
       </h3>
       <div className="flex-col-reverse md:flex-row justify-between mb-12">
-        <div className="w-full flex mb-[63px]">
+        <div className="w-full block md:flex mb-[63px]">
           <img
             src={profileImage}
             alt="profile"
-            className="h-[126px] w-[126px] mr-4 rounded-full"
+            className="h-[126px] w-[126px] mr-4 rounded-full mb-5 md:mb-0"
           />
           <div className="w-full flex justify-between">
             {changeDetails ? (
@@ -73,9 +73,9 @@ const ProfileInfo = ({ profileNav }) => {
               }}
             >
               <span className="inline-block h-[24px] w-[24px]">
-                <img src={editIcon} alt="Edit Profile" />
+                {!changeDetails && <img src={editIcon} alt="Edit Profile" />}
               </span>
-              <span>{changeDetails ? "Done" : "Edit Profile"}</span>
+              <span>{changeDetails ? "" : "Edit Profile"}</span>
             </p>
           </div>
         </div>
@@ -85,7 +85,7 @@ const ProfileInfo = ({ profileNav }) => {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               {changeDetails ? (
                 <>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="fName">First Name</label>
                     <input
                       type="text"
@@ -98,7 +98,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="Jeremy"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="lName">Last Name</label>
                     <input
                       type="text"
@@ -111,7 +111,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="Anton"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="email">Email</label>
                     <input
                       name="email"
@@ -126,7 +126,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="jeremyanton@gmail.com"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="phone">Phone No.</label>
                     <input
                       name="phone"
@@ -141,7 +141,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="+2348012345678"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="occupation">Occupation</label>
                     <input
                       name="occupation"
@@ -154,7 +154,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="Junior Product Designer"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="country">Country</label>
                     <input
                       name="country"
@@ -169,7 +169,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="Nigeria"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="dob">Date of Birth</label>
                     <input
                       type="date"
@@ -184,7 +184,7 @@ const ProfileInfo = ({ profileNav }) => {
                       placeholder="October 1st, 1990"
                     />
                   </div>
-                  <div>
+                  <div className="col-span-2 lg:col-span-1">
                     <label htmlFor="gender">Gender</label>
                     <div className="grid grid-cols-2 space-x-4">
                       <div className="py-[13px] px-[18px] border border-[#42119680] rounded-[10px]">
