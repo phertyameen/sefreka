@@ -111,7 +111,7 @@ const Login = () => {
           <div className="px-[10%]">
             <div className="relative">
               <hr className="h-[1px] bg-gray-900" />
-              <span className="bg-white text-[13.7px] absolute top-[-11px] left-[50%] px-4 transform -translate-x-1/2">
+              <span className="bg-white text-[13.7px] absolute top-[-11px] left-[50%] px-4 transform -translate-x-1/2 text-nowrap">
                 or continue with
               </span>
             </div>
