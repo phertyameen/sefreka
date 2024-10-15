@@ -2,8 +2,13 @@ import React from "react";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import TimeLineItems from "./TimeLineItems";
 import eclipsbg from "../assets/images/eclips.svg";
+import { useNavigate } from "react-router-dom";
 
 const HomeUpdates = () => {
+  const navigate = useNavigate()
+  const navCommunity = () => {
+    navigate("community")
+  }
   const timelineData = [
     {
       date: "Nov, 23",
@@ -58,7 +63,7 @@ const HomeUpdates = () => {
             Here are your most recent Community updates
           </p>
         </div>
-        <div className="mb-4 lg:mb-0 text-[#795CD0] flex self-start lg:self-center gap-[6px] font-medium">
+        <div onClick={navCommunity} className="mb-4 lg:mb-0 text-[#795CD0] flex self-start lg:self-center gap-[6px] font-medium">
           <MdOutlineKeyboardDoubleArrowRight
             style={{
               marginLeft: "2px",
@@ -72,7 +77,7 @@ const HomeUpdates = () => {
         </div>
       </div>
       <div className="relative w-full">
-        <div className="absolute left-[-20%] top-7 w-full lg:w-max h-max bottom-0 z-0">
+        <div className="hidden md:block 2xl:hidden absolute left-[-20%] top-7 w-full lg:w-max h-max bottom-0 z-0">
           <img src={eclipsbg} alt="" />
         </div>
         <ul className="timeline timeline-vertical mt-[17px]">

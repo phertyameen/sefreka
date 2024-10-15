@@ -5,6 +5,7 @@ import googleBtn from "../assets/images/googleIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { auth, provider, signInWithPopup } from "../../firebase"; // Firebase config
 
 const Login = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Login = () => {
     return newErrors;
   };
 
-  const signUp = (e) => {
+  const signInp = (e) => {
     e.preventDefault();
     const formErrors = validateForm();
     if (Object.keys(formErrors).length > 0) {
@@ -50,25 +51,31 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Google Sign-In Handler
+  const signInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log(result.user);
+      // Navigate or take action after successful sign-in
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("Google Sign-In Error:", error.message);
+    }
+  };
+
   return (
     <div className="flex flex-col lg:flex-row lg:max-h-[1164px] lg:max-w-[1512px] lg:min-h-screen lg:items-center lg:justify-center m-auto">
       <div className="hidden lg:flex w-[45%] min-h-screen">
-        <img
-          src={loginImg}
-          alt=""
-          className="w-full object-cover min-h-screen"
-        />
+        <img src={loginImg} alt="" className="w-full object-cover min-h-screen" />
       </div>
       <div className="lg:w-[55%] mt-10">
         <div className="ml-[85%] mb-[57px]">
           <MdHome className="h-[30px] w-[30px] text-[#421196]" />
         </div>
         <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">
-          <h1 className="text-center font-[Georgia] text-[47px] text-[#421196]">
-            Welcome Back
-          </h1>
+          <h1 className="text-center font-[Georgia] text-[47px] text-[#421196]">Welcome Back</h1>
           <p className="text-center">Login to continue</p>
-          <form className="w-full py-[45px] px-4 md:px-[70px]" onSubmit={signUp}>
+          <form className="w-full py-[45px] px-4 md:px-[70px]" onSubmit={signInp}>
             <div className="w-full my-4">
               <Input
                 type="email"
@@ -115,7 +122,7 @@ const Login = () => {
                 or continue with
               </span>
             </div>
-            <button className="shadow-xl rounded-[9px] mx-auto text-[#421196] flex gap-3 py-[13.5px] px-[17.6px] my-[40px]">
+            <button onClick={signInWithGoogle} className="shadow-xl rounded-[9px] mx-auto text-[#421196] flex gap-3 py-[13.5px] px-[17.6px] my-[40px]">
               <img src={googleBtn} alt="google icon" /> Google
             </button>
             <p className="text-center pb-[56px]">

@@ -19,15 +19,15 @@ const CommunityCard = ({ imageSrc, title, description, link, bg, showLink, showB
           {/* Conditionally render button if is true */}
           {showLink && <Link
             to={link}
-            className="text-indigo-600 font-semibold underline underline-offset-2 ml-[80%]"
+            className="text-indigo-600 font-semibold underline underline-offset-2 ml-[75%]"
           >
             Join
           </Link>}
           {/* Conditionally render button if is true */}
           {showButton && (
             <div className="flex justify-between font-medium text-xs lg:text-sm">
-              <button className="w-max bg-transparent border text-sm text-[#FF5252] border-[#FF5252] px-3 py-[4px] lg:px-6 lg:py-[10px] rounded-full">Leave</button>
-              <button className="w-max text-sm bg-[#FBE077] border border-none rounded-full px-2 py-[2px] lg:px-6 lg:py-[10px] text-nowrap">View More</button>
+              <button className="w-max bg-transparent border text-sm text-[#FF5252] border-[#FF5252] px-3 py-[4px] 2xl:px-6 lg:py-[10px] rounded-full">Leave</button>
+              <button className="w-max text-sm bg-[#FBE077] border border-none rounded-full px-3 py-[2px] 2xl:px-6 lg:py-[10px] text-nowrap">View More</button>
             </div>
           )}
         </div>

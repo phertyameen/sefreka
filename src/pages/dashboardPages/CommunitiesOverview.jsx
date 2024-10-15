@@ -3,8 +3,8 @@ import CommunityCard from "../../components/CommunityCard";
 
 const CommunitiesOverview = ({ communities }) => {
   return (
-    <div className="px-5 lg:p-[61px]">
-      <div className="text-center py-8 md:w-[60%] m-auto">
+    <div className="px-5 2xl:p-[61px] h-full overflow-auto no-scrollbar">
+      <div className="text-center py-8 md:w-[70%] m-auto">
         <h1 className="text-3xl font-bold text-[#421196]">
           Choose your community
         </h1>
@@ -14,10 +14,10 @@ const CommunitiesOverview = ({ communities }) => {
           Discovery.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 xl:gap-[55px] w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-2 2xl:grid-cols-3 gap-5 xl:gap-[32px] w-full">
         {communities.map((community, index) => (
           <CommunityCard
-            customWidth="full"
+            customWidth=""
             key={index}
             imageSrc={community.imageSrc}
             title={community.title}

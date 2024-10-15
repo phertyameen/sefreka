@@ -53,8 +53,8 @@ const TrendingCard = ({
         <div className="h-full col-span-2 pt-5 sm:pt-0 sm:p-5 rounded-[5.83px] sm:ml-[10%] custom-img-container">
           <img src={heroImg} alt="image" className="w-full h-full rounded-[5.83px]" />
         </div>
-        <hr />
       </div>
+      <hr className="h-[1px] bg-[#CCCCCC]"/>
     </div>
   );
 };

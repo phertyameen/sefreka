@@ -14,8 +14,8 @@ const TimeLineItems = ({ date, title, description, time, color, borderCol }) => 
 
       {/* Timeline content box */}
       <div className="w-full md:border-l border-[#4E4E4E]">
-        <div className="w-full flex justify-between bg-white ml-[12px] py-[12px] mb-[13.13px] px-[5px] lg:ml-[29.5px] lg:py-[15px] lg:px-[30px] shadow rounded-lg">
-          <div className="text-[22.97px] text-[#4E4E4E]">
+        <div className="w-full sm:flex justify-between bg-white ml-[12px] py-[12px] mb-[13.13px] px-[5px] lg:ml-[29.5px] lg:py-[15px] lg:px-[30px] shadow rounded-lg">
+          <div className="text-[22.97px] text-[#4E4E4E] sm:w-[80%] md:w-[75%] xl:w-full">
             <p className="font-medium">
               {title}{" "}
               <span className="text-[22.97px] font-semibold text-[#795CD0]">
@@ -24,10 +24,10 @@ const TimeLineItems = ({ date, title, description, time, color, borderCol }) => 
             </p>
             <p className="text-['#4e4e4e'] mt-2 flex gap-[6.5px] items-center">
               <MdOutlineKeyboardDoubleArrowRight className="h-[21.13px] w-[21.13px]" />{" "}
-              <span>View notification</span>
+              <span className="text-sm sm:text-[22.97px]">View notification</span>
             </p>
           </div>
-          <div className="">{time}</div>
+          <div className="text-end">{time}</div>
         </div>
       </div>
     </li>

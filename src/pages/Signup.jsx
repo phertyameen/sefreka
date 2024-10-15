@@ -5,6 +5,7 @@ import googleBtn from "../assets/images/googleIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Input from "../components/Input";
+import { auth, provider, signInWithPopup } from "../../firebase";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -65,6 +66,18 @@ const Signup = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Google Sign-In Handler
+  const signInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log(result.user);
+      // Navigate or take action after successful sign-in
+      navigate("/communities");
+    } catch (error) {
+      console.error("Google Sign-In Error:", error.message);
+    }
   };
 
   return (
@@ -161,7 +174,7 @@ const Signup = () => {
                 or continue with
               </span>
             </div>
-            <button className="shadow-xl rounded-[9px] mx-auto text-[#421196] flex gap-3 py-[13.5px] px-[17.6px] my-[40px]">
+            <button onClick={signInWithGoogle} className="shadow-xl rounded-[9px] mx-auto text-[#421196] flex gap-3 py-[13.5px] px-[17.6px] my-[40px]">
               <img src={googleBtn} alt="google icon" /> Google
             </button>
             <p className="text-center pb-[56px]">

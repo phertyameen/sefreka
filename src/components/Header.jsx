@@ -18,6 +18,7 @@ const Header = ({ handleToggle }) => {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 1px 4px 0px #00000033;
+    position: sticky;
     @media (max-width: 768px) {
       padding: 19px 5px;
     }

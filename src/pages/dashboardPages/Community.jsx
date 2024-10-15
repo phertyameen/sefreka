@@ -85,7 +85,7 @@ const Community = () => {
           links={links}
           activeNavStyles={activeNavStyles}
           notNavStyles={notNavStyles}
-          text={"base"}
+          text={"sm"}
         />
         <div className='w-full lg:px-4 divShadow'>
         <div className="relative inpDiv w-[80%] m-auto mt-5">
