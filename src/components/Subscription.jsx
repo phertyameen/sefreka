@@ -26,7 +26,7 @@ const Subscription = ({ setShowAddCard }) => {
           </div>
         </div>
         {path && <p>Monthly Billing: $20</p>}
-        <div className="flex flex-col sm:flex-row gap-2 justify-between mt-2">
+        <div className="flex flex-col sm:flex-row gap-2 justify-between my-5">
           <p>
             {path
               ? "Next Billing: November, 2023"
