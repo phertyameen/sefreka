@@ -4,7 +4,7 @@ import CommunityCard from "../../components/CommunityCard";
 const CommunitiesJoined = ({ communities }) => {
   return (
     <div className="col-span-2 w-full md:px-4 mt-[58px]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 justify-center gap-[55px] px-4 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 justify-center gap-[50px] px-4 w-full">
         {communities.map((community, index) => (
           <CommunityCard
           customWidth=""

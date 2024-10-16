@@ -19,7 +19,7 @@ const Profile = () => {
   const links = [
     {
       title: "Personal Information",
-      url: "/dashboard/profile/profileinfo",
+      url: "/dashboard/profile",
       src: profileIcon,
     },
     { title: "Password Change", url: "changepassword", src: lock },
