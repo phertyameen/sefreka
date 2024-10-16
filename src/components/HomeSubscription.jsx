@@ -36,7 +36,7 @@ const HomeSubscription = () => {
   ];
 
   return (
-    <div className="py-[55.98px] px-[43px]">
+    <div className="xl:py-[55.98px] xl:px-[43px]">
       <div className="bg-[#795CD0] w-full pt-[46.65px] pb-[99.48px] m-auto">
         <div className="text-center">
           <h2 className="text-[#FBE077] text-[23.32px]">

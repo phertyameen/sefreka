@@ -11,10 +11,16 @@ import {
   YAxis,
 } from "recharts";
 
-const BarchartComp = ({weeklyData, color}) => {
+const BarchartComp = ({weeklyData, color, weekTitles}) => {
 
   return (
-    <div className="col-span-2 w-full px-4 2xl:px-[68px] py-[26px] shadow-lg rounded-[10px]">
+    <div className="relative col-span-2 w-full px-4 2xl:px-[68px] py-[26px] shadow-lg rounded-[10px]">
+      <div className="w-full absolute bg-white font-medium grid grid-cols-2 px-10">
+      <h2>Daily Statistics</h2>
+      <h2 className="text-end">
+              {weekTitles}
+        </h2>
+      </div>
        <ResponsiveContainer width="100%" height={356}>
         <BarChart
           width="100%"

@@ -123,45 +123,14 @@ const BarChartsAnalytics = () => {
   ];
 
   const color = ["#FFCC00", "#795CD0", "#0AA52CE5", "#B90D0DE5"];
+  const weekTitles = ["Week 1", "Week 2", "Week 3", "Week 4"]; // Titles for each chart
   const renderCustomizedLabel = () => {};
 
   return (
     <div className="w-full px-4">
-      {/* <ResponsiveContainer width="100%" height={356}>
-        <BarChart
-          width="100%"
-          height={356}
-          barSize={5}
-          data={weeklyData}
-          margin={{
-            top: 0,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="1" vertical={false} />
-          <XAxis dataKey="day" axisLine={false}  tickLine={false} />
-          <YAxis axisLine={false} domain={[0,'auto']} ticks={[1, 2, 3, 4, 5]} tickLine={false} />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="value"
-            fill={blue}
-            activeBar={
-              <Rectangle
-                fill="pink"
-                stroke="blue"
-                labelLine={false}
-                label={renderCustomizedLabel}
-              />
-            }
-          />
-        </BarChart>
-      </ResponsiveContainer> */}
       <div className="grid md:grid-cols-4">
         {weeklyData.map((data, index) => (
-          <BarchartComp color={color[index]} weeklyData={data} />
+          <BarchartComp color={color[index]} weeklyData={data} weekTitles={weekTitles[index]} />
         ))}
       </div>
     </div>

@@ -27,7 +27,7 @@ const TimeLineItems = ({ date, title, description, time, color, borderCol }) => 
               <span className="text-sm sm:text-[22.97px]">View notification</span>
             </p>
           </div>
-          <div className="text-end">{time}</div>
+          <div className="text-end text-nowrap">{time}</div>
         </div>
       </div>
     </li>
