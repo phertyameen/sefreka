@@ -22,13 +22,29 @@ const ProfileInfo = ({ profileNav }) => {
     formData;
 
   const [changeDetails, setChangeDetails] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(profileImage);
 
   const onchange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
-  const onsubmit = () => {
-    // e.preventDefault()
+
+  const onsubmit = (e) => {
+    e.preventDefault();
+    setChangeDetails(false); // Disable editing after submission
+    console.log("Form data submitted:", formData); // Log form submission
   };
+
+  const onImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSelectedImage(reader.result); // Update the profile image with the selected file
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="w-full px-4 2xl:px-[68px] py-[26px] divShadow">
       <h3 className="text-[#421196] font-medium mb-[35px]">
@@ -37,17 +53,28 @@ const ProfileInfo = ({ profileNav }) => {
       <div className="flex-col-reverse md:flex-row justify-between mb-12">
         <div className="w-full block md:flex mb-[63px]">
           <img
-            src={profileImage}
+            src={selectedImage}
             alt="profile"
             className="h-[126px] w-[126px] mr-4 rounded-full mb-5 md:mb-0"
           />
           <div className="w-full flex justify-between">
             {changeDetails ? (
               <div className="flex gap-4 items-center justify-end lg:mt-7">
-                <button className="w-max border border-[#79747E] rounded-full text-[#421196] px-[24px] py-[10px]">
+                
+                {/* Upload and Delete Avatar buttons */}
+                <label className="w-max border border-[#79747E] rounded-full text-[#421196] px-[24px] py-[10px] cursor-pointer">
                   Upload New
-                </button>
-                <button className="bg-[#FBE077] text-[#421196] w-max rounded-full px-[24px] py-[10px]">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={onImageChange}
+                    className="hidden"
+                  />
+                </label>
+                <button
+                  className="bg-[#FBE077] text-[#421196] w-max rounded-full px-[24px] py-[10px]"
+                  onClick={() => setSelectedImage(profileImage)} // Reset to default image
+                >
                   Delete Avatar
                 </button>
               </div>
@@ -212,10 +239,10 @@ const ProfileInfo = ({ profileNav }) => {
                     </div>
                   </div>
                   <div className="col-span-2 flex gap-4 items-center justify-end lg:mt-7">
-                    <button className="w-max border border-[#79747E] rounded-full text-[#421196] px-[24px] py-[10px]">
+                    <button onClick={() => setChangeDetails(false)} className="w-max border border-[#79747E] rounded-full text-[#421196] px-[24px] py-[10px]">
                       Discard
                     </button>
-                    <button className="bg-[#FBE077] text-[#421196] w-max rounded-full px-[24px] py-[10px]">
+                    <button type="submit" className="bg-[#FBE077] text-[#421196] w-max rounded-full px-[24px] py-[10px]">
                       Save Changes
                     </button>
                   </div>
