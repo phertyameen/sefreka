@@ -87,7 +87,7 @@ const Signup = () => {
       </div>
       <div className="lg:w-[55%] mt-10">
         <div className="ml-[85%] mb-[57px]">
-          <MdHome className="h-[30px] w-[30px] text-[#FBE077]" />
+          <MdHome className="h-[30px] w-[30px] text-[#421196]" />
         </div>
         <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">
           <h1 className="text-center font-[Georgia] text-[47px] text-[#421196]">
