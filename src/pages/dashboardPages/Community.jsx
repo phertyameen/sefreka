@@ -124,10 +124,10 @@ const Community = () => {
           </div>
           <div>
             {location.pathname.includes("communitiesoverview") ? (
-              <CommunitiesOverview communities={communities} />
+              <CommunitiesOverview communities={filteredCommunities} />
             ) : (
               <CommunitiesJoined
-                communities={filteredCommunities.slice(0, 6)}
+                communities={filteredCommunities.slice(0, 4)}
               />
             )}
           </div>
