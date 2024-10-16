@@ -7,7 +7,7 @@ const CommunitiesJoined = ({ communities }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 justify-center gap-[50px] px-4 w-full">
         {communities.map((community, index) => (
           <CommunityCard
-          customWidth=""
+          customWidth="" 
             key={index}
             imageSrc={community.imageSrc}
             title={community.title}

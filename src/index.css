@@ -30,6 +30,13 @@
     outline: none;
     border-radius: 10px;
   }
+  .searchImp{
+    width: 100%;
+    border: 1px solid #42119680;
+    padding: 13px 55px;
+    outline: none;
+    border-radius: 10px;
+  }
   .profileInp::placeholder, .profileActiveInp::placeholder{
     color: #1E1E1E;
     font-size: 14px;

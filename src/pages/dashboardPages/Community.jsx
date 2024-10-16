@@ -1,26 +1,36 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import communityIcon from "../../assets/images/communityIcon.svg";
 import doublefoward from "../../assets/images/doubleFowardIcon.svg";
-import ProfileNavLinks from '../../components/ProfileNavLinks';
-import CommunitiesOverview from './CommunitiesOverview';
-import CommunitiesJoined from './CommunitiesJoined';
+import ProfileNavLinks from "../../components/ProfileNavLinks";
+import CommunitiesOverview from "./CommunitiesOverview";
+import CommunitiesJoined from "./CommunitiesJoined";
 import careerBoostImage from "../../assets/images/careerBoostImage.svg";
 import healingHeartsImage from "../../assets/images/healingHeartsImage.svg";
 import techTalk from "../../assets/images/techTalkImage.svg";
 import creativeMinds from "../../assets/images/creaativeMindsImage.svg";
 import moneyMatters from "../../assets/images/moneyMattersImage.svg";
 import fitFam from "../../assets/images/fitFamImage.svg";
-import searchIcon from "../../assets/images/searchIcon.svg"
+import searchIcon from "../../assets/images/searchIcon.svg";
 
 const Community = () => {
   const location = useLocation();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
   const activeNavStyles = "bg-[#F4EEFF] text-[#421196] cursor-pointer";
   const notNavStyles = "flex gap-2";
 
   const links = [
-    { title: "Communities overview", url: "communitiesoverview", src: communityIcon },
-    { title: "Communities joined", url: "communitiesjoined", src: communityIcon },
+    {
+      title: "Communities overview",
+      url: "communitiesoverview",
+      src: communityIcon,
+    },
+    {
+      title: "Communities joined",
+      url: "communitiesjoined",
+      src: communityIcon,
+    },
   ];
 
   const community = links.map(
@@ -73,6 +83,13 @@ const Community = () => {
     },
   ];
 
+  // Step 2: Filter the communities based on the search query
+  const filteredCommunities = communities.filter(
+    (community) =>
+      community.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      community.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main className="mt-[46px] mx-4 lg:mx-6 md:ml-[54px]">
       <div className="flex gap-[10px] text-[#421196]">
@@ -87,16 +104,31 @@ const Community = () => {
           notNavStyles={notNavStyles}
           text={"sm"}
         />
-        <div className='w-full lg:px-4 divShadow'>
-        <div className="relative inpDiv w-[80%] m-auto mt-5">
-            <img src={searchIcon} alt="" className="absolute left-6 translate-y-1/2"/>
-          <input type="search" name="search" id="search" className="profileInp w-full"/>
-        </div>
+        <div className="w-full lg:px-4 divShadow">
+          <div className="relative inpDiv w-[80%] m-auto mt-5">
+            {!isFocused && (
+              <img
+                src={searchIcon}
+                alt="search icon"
+                className="absolute left-6 translate-y-1/2"
+              />
+            )}
+            <input
+              type="search"
+              name="search"
+              id="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="px-5 searchImp w-full"
+            />
+          </div>
           <div>
             {location.pathname.includes("communitiesoverview") ? (
               <CommunitiesOverview communities={communities} />
             ) : (
-              <CommunitiesJoined communities={communities.slice(0, 4)} />
+              <CommunitiesJoined
+                communities={filteredCommunities.slice(0, 6)}
+              />
             )}
           </div>
         </div>
