@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import editIcon from "../assets/images/pencilIcon.svg";
 import emailIcon from "../assets/images/emailIcon.svg";
 import phoneIcon from "../assets/images/phoneIcon.svg";
@@ -8,15 +8,28 @@ import profileImage from "../assets/images/profilePic.png";
 
 const ProfileInfo = ({ profileNav }) => {
   const [formData, setFormData] = useState({
-    fName: "Jeremy", // initial values
-    lName: "Anton",
-    email: "jeremyanton@gmail.com",
+    fName: "", // initial values
+    lName: "",
+    email: "",
     phone: "+2348012345678",
     occupation: "React Developer",
     country: "Nigeria",
     dob: "October 1st, 2023",
     gender: "female",
   });
+
+  useEffect(() => {
+    // Get user info from local storage
+    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (storedUserInfo) {
+      setFormData((prevData) => ({
+        ...prevData,
+        fName: storedUserInfo.fname,
+        lName: storedUserInfo.lname,
+        email: storedUserInfo.email,
+      }));
+    }
+  }, []);
 
   const { fName, lName, email, phone, occupation, country, dob, gender } =
     formData;

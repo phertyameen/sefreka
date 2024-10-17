@@ -43,6 +43,9 @@ const Login = () => {
       setErrors(formErrors);
     } else {
       setErrors({});
+      // Store user credentials in local storage
+    localStorage.setItem('userEmail', formData.email);
+    localStorage.setItem('userPassword', formData.password);
       navigate("/dashboard");
     }
   };
@@ -55,7 +58,19 @@ const Login = () => {
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result.user);
+
+      // Extracting user information
+    const userInfo = {
+      fname: result.user.displayName.split(" ")[0], // First Name
+      lname: result.user.displayName.split(" ").slice(1).join(" "), // Last Name (if multiple parts)
+      email: result.user.email,
+      uid: result.user.uid, // You can store this for identifying the user uniquely
+      photoURL: result.user.photoURL, // Optional, for displaying profile picture
+    };
+
+    // Store user info in local storage
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    
       // Navigate or take action after successful sign-in
       navigate("/dashboard");
     } catch (error) {

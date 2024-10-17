@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/images/logo.svg";
 import dashboardIcon from "../assets/images/dashboardIcon.svg";
 import searchIcon from "../assets/images/searchIcon.svg";
@@ -7,6 +7,18 @@ import profilePic from "../assets/images/profilePic.png";
 import styled from "styled-components";
 
 const Header = ({ handleToggle }) => {
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+  const storedUserInfo = localStorage.getItem('userInfo');
+  if (storedUserInfo) {
+    const parsedUserInfo = JSON.parse(storedUserInfo); // Parse the string to an object
+    setUsername(parsedUserInfo.fname ? parsedUserInfo.fname : "Guest");
+  } else {
+    setUsername("Guest");
+  }
+}, []);
+
 
   const StyleHeader = styled.nav`
     background-color: #fff;
@@ -19,6 +31,8 @@ const Header = ({ handleToggle }) => {
     align-items: center;
     box-shadow: 0px 1px 4px 0px #00000033;
     position: sticky;
+    top: 0;
+    z-index: 2;
     @media (max-width: 768px) {
       padding: 19px 5px;
     }
@@ -34,7 +48,7 @@ const Header = ({ handleToggle }) => {
         </button>
       <div className="flex gap-36">
         <img src={logo} alt="logo" className="hidden sm:inline-block"/>
-        <div className="hidden md:flex gap-[10px] align-middle py-[50%]">
+        <div className="hidden md:flex gap-[10px] items-center">
           <img src={dashboardIcon} alt="" className="w-[26.25px] h-[26.25px]" />
           <h2>Dashboard</h2>
         </div>
@@ -50,7 +64,7 @@ const Header = ({ handleToggle }) => {
                 <div className="w-9 h-9 rounded-full bg-[#795CD0]">
                     <img src={profilePic} alt="" className="rounded-full"/>
                 </div>
-                <p className="text-nowrap ml-2">Jeremy Anton</p>
+                <p className="text-nowrap ml-2">{username}</p>
             </div>
         </div>
       </div>
