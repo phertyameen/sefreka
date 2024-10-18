@@ -33,7 +33,7 @@ const NewPasswordField = () => {
     // Proceed if validation passes
     navigate('/passwordSuccess');
   };
-  
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -56,7 +56,7 @@ const NewPasswordField = () => {
         <form action="" className="w-full py-[45px] px-4 md:px-[70px]" onSubmit={handleSubmit}>
           <div className="w-full my-4">
             <Input
-              type="newPassword"
+              type="password"
               name="newPassword"
               id="newPassword"
               placeholder="New password"
