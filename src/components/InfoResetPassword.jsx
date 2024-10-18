@@ -41,42 +41,44 @@ const InfoResetPassword = ({ onResetPasswordClick }) => {
           </div>
         </div>
 
-        <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">
-          <h1 className="text-center font-[Georgia] text-[47px]">
-            Reset Password
-          </h1>
-          <p className="text-center px-4 md:px-[70px]">
-            We’ll send you an email with instructions on how to reset your
-            password.
-          </p>
-          <form action="" onSubmit={handleSubmit} className="w-full py-[45px] px-4 md:px-[70px]">
-            <div className="w-full my-4">
-              <Input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email address"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="flex justify-center mt-5">
-              <Button text="Reset Password" className="w-max px-10 md:px-14" />
-            </div>
-          </form>
-          <div className="px-4 md:px-[70px]">
-            <p className="pb-[56px] flex justify-end">
-              <span>
-                <img src={backArrow} alt="backArrow" className="" />
-              </span>
-              <span>Go back to</span>
-              <Link
-                className="text-[#421196] font-semibold ml-2 text-center"
-                to={"/"}
-              >
-                Sign In
-              </Link>
+        <div className="xl:h-[80%] xl:flex items-center">
+          <div className="ml-[5%] xl:ml-[10%] mr-[8%] shadow-xl rounded-[9.79px] ">
+            <h1 className="text-center font-[Georgia] text-[47px]">
+              Reset Password
+            </h1>
+            <p className="text-center px-4 md:px-[70px]">
+              We’ll send you an email with instructions on how to reset your
+              password.
             </p>
+            <form action="" onSubmit={handleSubmit} className="w-full py-[45px] px-4 md:px-[70px]">
+              <div className="w-full my-4">
+                <Input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email address"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="flex justify-center mt-5">
+                <Button text="Reset Password" className="w-max px-10 md:px-14" />
+              </div>
+            </form>
+            <div className="px-4 md:px-[70px]">
+              <p className="pb-[56px] xl:pb-[148px] flex justify-end items-center">
+                <span>
+                  <img src={backArrow} alt="backArrow" className="" />
+                </span>
+                <span>Go back to</span>
+                <Link
+                  className="text-[#421196] font-semibold ml-2 text-center"
+                  to={"/"}
+                >
+                  Sign In
+                </Link>
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ const NewPasswordField = () => {
         <MdHome className="h-[30px] w-[30px] text-[#421196]" />
         </div>
       </div>
-      <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">
+      <div className="ml-[5%] xl:ml-[10%] mr-[8%] shadow-xl rounded-[9.79px]">
         <h1 className="text-center font-[Georgia] text-[47px] text-[#421196]">
           Reset password
         </h1>
