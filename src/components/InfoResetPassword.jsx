@@ -10,7 +10,6 @@ import { MdHome } from "react-icons/md";
 const InfoResetPassword = ({ onResetPasswordClick }) => {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
   });
 
   const handleChange = (e) => {
@@ -18,9 +17,14 @@ const InfoResetPassword = ({ onResetPasswordClick }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    if (!formData.email) {
+      alert("Email address is required");
+      return;
+    }
     onResetPasswordClick();
-  }
+  };
+  
   return (
       <div className="lg:w-[55%]  mt-10">
         <div className="flex justify-between mb-[30px] md:mb-[60px]">

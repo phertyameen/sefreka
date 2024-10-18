@@ -16,9 +16,24 @@ const NewPasswordField = () => {
   });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    navigate('/passwordSuccess')
-  }
+    e.preventDefault();
+    
+    // Check if both fields are filled
+    if (!formData.newPassword || !formData.confirmPassword) {
+      alert("Both password fields are required.");
+      return;
+    }
+    
+    // Check if passwords match
+    if (formData.newPassword !== formData.confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+  
+    // Proceed if validation passes
+    navigate('/passwordSuccess');
+  };
+  
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

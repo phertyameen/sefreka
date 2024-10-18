@@ -54,7 +54,7 @@ export default function EmailVerificationModal({ handleOtpSubmit }) {
       </div>
 
       {/* Form Section */}
-      <div className="ml-[5%] mr-[8%] shadow-xl rounded-[9.79px]">
+      <div className="ml-[5%] mr-[8%] md:my-auto shadow-xl rounded-[9.79px]">
         <h1 className="text-center font-[Georgia] text-[47px]">Reset Password</h1>
         <p className="text-center px-4 md:px-[70px]">
           Please enter the verification code sent to your email.

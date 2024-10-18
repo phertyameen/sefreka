@@ -23,7 +23,7 @@ const ResetPassword = () => {
         <img
           src={resetPassword}
           alt=""
-          className="w-3/4 self-center h-3/4 object-cover m-auto"
+          className="w-3/4 self-center h-3/4 object-contain m-auto"
         />
       </div>
       {/* Conditionally render the components */}
