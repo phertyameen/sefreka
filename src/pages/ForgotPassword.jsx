@@ -30,7 +30,7 @@ const ForgotPassword = () => {
 
       <div className="bg-white pt-10 px-4 md:px-[40px] lg:px-[69px] py-[26px] mx-auto">
         {/* Top Header */}
-        <div className="flex justify-between mb-[30px] md:mb-[60px]">
+        <div className="flex justify-between mb-[30px] md:mb-[60px] items-center">
           <div></div>
           <div>
             <img
@@ -40,7 +40,7 @@ const ForgotPassword = () => {
             />
           </div>
           <div className="">
-          <MdHome className="h-[30px] w-[30px] text-[#FBE077]" />
+          <MdHome className="h-[30px] w-[30px] text-[#421196]" />
           </div>
         </div>
 

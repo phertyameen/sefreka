@@ -43,13 +43,13 @@ export default function EmailVerificationModal({ handleOtpSubmit }) {
   return (
     <div className="lg:w-[55%] mt-10">
       {/* Header Section */}
-      <div className="flex justify-between mb-[30px] md:mb-[60px]">
+      <div className="flex justify-between mb-[30px] md:mb-[60px] items-center">
         <div></div>
         <div>
           <img src={logo} alt="selfreka logo" className="w-[100px] md:w-auto" />
         </div>
         <div>
-        <MdHome className="h-[30px] w-[30px] text-[#421196]" />
+        <MdHome className="h-[30px] w-[30px] text-[#421196] mr-10" />
         </div>
       </div>
 

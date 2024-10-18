@@ -40,13 +40,13 @@ const NewPasswordField = () => {
 
   return (
     <div className="lg:w-[55%]  mt-10">
-      <div className="flex justify-between mb-[30px] md:mb-[60px]">
+      <div className="flex justify-between mb-[30px] md:mb-[60px] items-center">
         <div></div>
         <div>
           <img src={logo} alt="selfreka logo" className="w-[100px] md:w-auto" />
         </div>
         <div className="">
-        <MdHome className="h-[30px] w-[30px] text-[#421196]" />
+        <MdHome className="h-[30px] w-[30px] text-[#421196] mr-10" />
         </div>
       </div>
       <div className="ml-[5%] xl:ml-[10%] mr-[8%] shadow-xl rounded-[9.79px]">

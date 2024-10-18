@@ -27,7 +27,7 @@ const InfoResetPassword = ({ onResetPasswordClick }) => {
   
   return (
       <div className="lg:w-[55%]  mt-10">
-        <div className="flex justify-between mb-[30px] md:mb-[60px]">
+        <div className="flex justify-between mb-[30px] md:mb-[60px] items-center">
           <div></div>
           <div>
             <img
@@ -37,11 +37,11 @@ const InfoResetPassword = ({ onResetPasswordClick }) => {
             />
           </div>
           <div className="">
-          <MdHome className="h-[30px] w-[30px] text-[#421196]" />
+          <MdHome className="h-[30px] w-[30px] text-[#421196] mr-10" />
           </div>
         </div>
 
-        <div className="xl:h-[80%] xl:flex items-center">
+        <div className="lg:h-[80%] lg:flex items-center">
           <div className="ml-[5%] xl:ml-[10%] mr-[8%] shadow-xl rounded-[9.79px] ">
             <h1 className="text-center font-[Georgia] text-[47px]">
               Reset Password
